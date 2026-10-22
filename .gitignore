@@ -1,0 +1,9 @@
+node_modules/
+.env
+.env.*
+!.env.example
+data/
+evidence/private/
+*.log
+_*.json
+.workbuddy/

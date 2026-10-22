@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#da291c"><title>麦麦盲评局 McTaste · 让味蕾先投票</title><link rel="icon" href="/icon.svg"><link rel="stylesheet" href="/style.css"><script type="module" src="/app.mjs"></script></head>
+<body>
+<a class="skip-link" href="#main">跳到主要内容</a>
+<header class="header"><a class="brand" href="/" aria-label="麦麦盲评局首页"><img src="/icon.svg" alt="" width="38" height="38"><span>麦麦盲评局</span></a><nav aria-label="实验阶段"><button id="nav-setup" aria-current="step">组个局</button><button id="nav-vote" disabled>盲评席</button><button id="nav-result" disabled>揭晓榜</button></nav><span class="local-tag"><i></i> 本地小实验</span></header>
+<main id="main" tabindex="-1"></main>
+<footer><span>麦麦盲评局 · 让味蕾先投票。</span><span>独立创意项目，非麦当劳官方产品。数据保存在当前浏览器。</span><button id="clear-storage">清除本局数据</button></footer>
+<div id="toast" role="status" aria-live="polite"></div>
+<dialog id="host-dialog" aria-labelledby="host-title"><div class="dialog-head"><h2 id="host-title">主持人备餐单</h2><button id="close-host" class="icon-button" aria-label="关闭主持人备餐单">×</button></div><p>请由不参与评分的主持人准备。去掉包装、使用相同容器，按编号分装。先确认参与者的忌口与过敏原，盲评不隐藏饮食风险。</p><div id="host-content"></div><div class="dialog-actions"><button id="print-labels" class="primary">打印样本标签</button><span>评分前请关掉此页，避免提前看到答案。</span></div></dialog>
+<dialog id="import-dialog" aria-labelledby="import-title"><div class="dialog-head"><h2 id="import-title">换一份真实餐品清单</h2><button id="close-import" class="icon-button" aria-label="关闭导入说明">×</button></div><p>在本机用官方 MCP 同步门店在售菜单与营养数据，再刷新页面。这里不接收 Token，浏览器也不直连外部域。</p><div class="code-block">set MCD_MCP_TOKEN=你的令牌<br>node scripts/mcp.mjs sync --config data/capture.json</div><p>同步会生成餐品清单与营养数据（揭晓页自动显示「营养真相」）。也可导入标准格式文件，手动文件统一标为“未独立核验”。</p><label class="upload-label">选择清单 JSON<input id="catalog-file" type="file" accept="application/json,.json"></label><p id="import-error" role="alert"></p></dialog>
+<dialog id="reset-dialog" aria-labelledby="reset-title"><h2 id="reset-title">重新开始这一局？</h2><p>当前分组和评分将清除，餐品清单会保留。</p><div class="dialog-actions"><button id="cancel-reset" class="secondary">保留本局</button><button id="confirm-reset" class="primary">清除并重新开始</button></div></dialog>
+<noscript>请启用 JavaScript，或阅读项目 README 中的使用说明。</noscript>
+</body></html>

@@ -1,0 +1,4 @@
+{
+  "tool": "query-meals",
+  "arguments": { "storeCode": "替换为你在 query-nearby-stores 查到的门店编号", "orderType": 1, "beType": 1 }
+}
